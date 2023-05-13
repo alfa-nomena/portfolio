@@ -1,0 +1,4 @@
+base/__pycache__
+base/migrations
+portfolio/__pycache__
+db.sqlite3

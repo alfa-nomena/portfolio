@@ -1,0 +1,66 @@
+html, body {
+    background-color: antiquewhite;
+}
+.logo-service{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.logo-service img{
+    width: 100px;
+    height: 100px;
+}
+.text-box .title{
+    text-align: center;
+}
+.text-box .description{
+    text-align: justify;
+    overflow: hidden;
+    height: 200px;
+    /* color: antiquewhite; */
+}
+.about-detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 20px;
+    flex-direction: row;
+}
+.about-detail .picture{
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    margin: 0;
+    border: 0;
+}
+.about-detail .picture img{
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    float: right;
+}
+
+.about-me{
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+}
+.about-me *{
+    width: 100%;
+}
+
+.dev-skills .skills{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.dev-skills .skills img{
+    width: 30px;
+    height: 30px;
+}
+.bg-gray{
+    background-color: antiquewhite;
+}

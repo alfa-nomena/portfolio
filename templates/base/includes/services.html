@@ -1,0 +1,24 @@
+<div id="services" class="basic-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="h2-heading">Offered services</h2>
+                <p class="p-heading">Web design and development have been my bread and butter for more than 5 years. During that time I've discovered that I can help startups and companies with the following services</p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            
+            {% for service in services %}
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <div class="logo-service">
+                            <img src="{{ service.image.url }}" alt="{{ service.title}}" class="logo-service">
+                        </div>
+                        <h4 class="title">{{ service.title }}</h4>
+                        <p class="description">{{ service.description }}</p>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+            {% endfor %}
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div>

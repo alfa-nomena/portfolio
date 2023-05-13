@@ -1,0 +1,23 @@
+<div id="about" class="basic-1 bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="text-container first">
+                    <h2>Hi there, I'm {{ owner.user }}</h2>
+                    <p>{{ owner.description }}</p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            
+            {% for work in works %}
+                <div class="col-lg-4">
+                    <div class="text-container third">
+                        <div class="time">{{ work.start}} - {{ work.end }}</div>
+                        <h6>{{ work.title}}</h6>
+                        <p>{{ work.description }}</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            {% endfor %}
+            <a href="#"> More about me </a>
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-1 -->
