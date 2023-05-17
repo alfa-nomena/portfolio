@@ -10,10 +10,10 @@ class Owner(models.Model):
     short_description = models.TextField(null=True)
     title = models.CharField(max_length=100)
     description = models.TextField(null=True)
-    profile_picture = models.ImageField(upload_to="about", default="moi.png", null=True)
-    cover_picture = models.ImageField(upload_to="about", default="moi.png", null=True)
+    profile_picture = models.ImageField(upload_to="images/about", null=True)
+    cover_picture = models.ImageField(upload_to="images/about", null=True)
     name = lambda self: f"{self.user.first_name} {self.user.last_name}"
-    cv = models.FileField("Curriculum Vitae", upload_to="owner", blank=True, null=True)
+    cv = models.FileField("Curriculum Vitae", upload_to="images/owner", blank=True, null=True)
     phone_number = PhoneNumberField(blank=True, null=True)
     location = models.CharField(max_length=100)
     linkedin = models.URLField(blank=True, null=True)
@@ -84,7 +84,7 @@ class Portfolio(models.Model):
     title = models.CharField(max_length=50)
     link = models.URLField()
     description = models.TextField()
-    image = models.ImageField(upload_to='portfolio', default='none.png', null=True)
+    image = models.ImageField(upload_to='images/portfolio', null=True)
 
     def __str__(self):
         return self.title
