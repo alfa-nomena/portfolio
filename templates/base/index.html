@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="I am a web developper and this is my port folio">
+    <meta name="author" content="ANDRIAMIFIDISOA Nomena Sombiniaina Alfa">
+
+
+    <!-- Webpage Title -->
+    <title>Personnal Portfolio</title>
+    
+    <!-- Styles -->
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="{% static 'base/css/swiper-bundle.min.css' %}">
+	<link href="{% static 'base/css/styles.css' %}" rel="stylesheet">
+
+	<!-- Favicon  -->
+    <link rel="icon" href="{% static 'base/images/favicon.png' %}">
+</head>
+<body>
+    <header class="header" id="header">
+        {% include 'base/includes/header.html' %}
+    </header>
+    <main class="main">
+        {% include 'base/includes/home.html' %}
+
+        {% include 'base/includes/about.html' %}
+
+        {% include 'base/includes/skills.html' %}
+
+        {% include 'base/includes/qualifications.html' %}
+
+        {% include 'base/includes/services.html' %}
+
+        {% include 'base/includes/portfolio.html' %}
+        
+        {% include 'base/includes/contact.html' %}
+
+    </main>
+    <footer class="footer">
+        {% include 'base/includes/footer.html' %}
+    </footer>
+    <!-- Scripts -->
+    <script src="{% static 'base/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'base/js/scripts.js' %}"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@ import numpy as np
 # Create your views here.
 
 class HomeTemplateView(TemplateView):
-    template_name = "base/home.html"
+    template_name = "base/index.html"
     def get(self, request, *args, **kwargs):
         owners = Owner.objects.all()
         if not owners:

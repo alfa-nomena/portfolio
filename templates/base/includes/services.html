@@ -1,24 +1,34 @@
-<div id="services" class="basic-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="h2-heading">Offered services</h2>
-                <p class="p-heading">Web design and development have been my bread and butter for more than 5 years. During that time I've discovered that I can help startups and companies with the following services</p>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-        <div class="row">
-            
-            {% for service in services %}
-                <div class="col-lg-4">
-                    <div class="text-box">
-                        <div class="logo-service">
-                            <img src="{{ service.image.url }}" alt="{{ service.title}}" class="logo-service">
-                        </div>
-                        <h4 class="title">{{ service.title }}</h4>
-                        <p class="description">{{ service.description }}</p>
-                    </div> <!-- end of text-box -->
-                </div> <!-- end of col -->
-            {% endfor %}
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div>
+<section class="services section" id="services">
+    <h2 class="section__title">Services</h2>
+    <span class="section__subtitle">What I offer</span>
+    <div class="services__container container grid">
+        {% for service in services %}
+            <div class="services__content">
+                <div>
+                    <i class="services__icon uil uil-{{service.class_logo}}"></i>
+                    <h3 class="service__title">{{service.name}}</h3>
+                </div>
+                <span class="button button--flex button--small button--link services__button">
+                    View more <i class="button__icon uil uil-arrow-right"></i>
+                </span>
+                <div class="services__modal">
+                    <div class="services__modal-content">
+                        <h4 class="services__modal-title">{{service.name}}</h4>
+                        <i class="services__modal-close uil uil-times"></i>
+                    
+                        <ul class="services__modal-services grid">
+                            
+                            {% for service_detail in service.servicedetail_set.all %}
+                                <li class="services__modal-service">
+                                    <p>
+                                        <i class="uil uil-check-circle services__modal-icon"></i>{{service_detail.description}}
+                                    </p>
+                                </li> 
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
