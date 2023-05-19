@@ -86,7 +86,7 @@ class ServiceDetail(models.Model):
     description = models.CharField("Service name",max_length=100)
     
     def __str__(self):
-        return self.description
+        return f"{self.service} - {self.description}"
     
 class Portfolio(models.Model):
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
