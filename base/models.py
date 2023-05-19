@@ -34,7 +34,7 @@ class Owner(models.Model):
 class Skill(models.Model):
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    duration = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=100)
     class_logo = models.CharField(max_length=50)
     
     def __str__(self):
