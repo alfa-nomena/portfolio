@@ -1114,9 +1114,6 @@ body.dark-theme{
     .swiper-pagination-horizontal>.swiper-pagination-bullet{
         bottom: -5rem;
     }
-    .contact__form{
-        width: 500px;
-    }
 }
 .home__social, .home__scroll, .about__info{
     display: none;
