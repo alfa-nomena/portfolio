@@ -6,14 +6,14 @@
             <div class="services__content">
                 <div>
                     <i class="services__icon uil uil-{{service.class_logo}}"></i>
-                    <h3 class="service__title">{{service.name}}</h3>
+                    <h3 class="service__title">{{service.name|title}}</h3>
                 </div>
                 <span class="button button--flex button--small button--link services__button">
                     View more <i class="button__icon uil uil-arrow-right"></i>
                 </span>
                 <div class="services__modal">
                     <div class="services__modal-content">
-                        <h4 class="services__modal-title">{{service.name}}</h4>
+                        <h4 class="services__modal-title">{{service.name|title}}</h4>
                         <i class="services__modal-close uil uil-times"></i>
                     
                         <ul class="services__modal-services grid">
@@ -21,7 +21,7 @@
                             {% for service_detail in service.servicedetail_set.all %}
                                 <li class="services__modal-service">
                                     <p>
-                                        <i class="uil uil-check-circle services__modal-icon"></i>{{service_detail.description}}
+                                        <i class="uil uil-check-circle services__modal-icon"></i>{{service_detail.description|capfirst}}
                                     </p>
                                 </li> 
                             {% endfor %}

@@ -7,6 +7,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 class Owner(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    pseudo = models.CharField(max_length=50, null=True, blank=True)
     short_description = models.TextField(null=True)
     title = models.CharField(max_length=100)
     description = models.TextField(null=True)
@@ -23,7 +24,8 @@ class Owner(models.Model):
     class Meta:
         verbose_name = "About me"
         verbose_name_plural = "About me"
-        
+    def current_name(self):
+        return self.pseudo if self.pseudo else self.user.first_name.split()[-1] if self.user.first_name else ''
     def __str__(self) -> str:
         return f"{self.user.first_name} {self.user.last_name}"
 
