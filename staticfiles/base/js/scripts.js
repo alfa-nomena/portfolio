@@ -79,6 +79,10 @@ modalCloses.forEach((modalClose) => {
 })
 
 let swiper = new Swiper(".portfolio__container", {
+    preventClicks : false,
+    preventClicksPropagation:false,
+    slidesPerView: 'auto',
+    slideToClickedSlide: true,
     cssMode: true,
     loop: true,
     navigation: {
@@ -114,12 +118,6 @@ function scrollHeader(){
     if (this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
-
-function scrollUp(){
-    const scrollUp=document.getElementById('scroll-up')
-    if (this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
-}
-window.addEventListener('scroll', scrollUp)
 
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
