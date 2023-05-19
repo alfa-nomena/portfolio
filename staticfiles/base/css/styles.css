@@ -570,6 +570,7 @@ img{
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .services__content{
