@@ -25,7 +25,9 @@ class Owner(models.Model):
         verbose_name = "About me"
         verbose_name_plural = "About me"
     def current_name(self):
-        return self.pseudo if self.pseudo else self.user.first_name.split()[-1] if self.user.first_name else ''
+        return self.pseudo or (
+            self.user.first_name.split()[-1] if self.user.first_name else ''
+        )
     def __str__(self) -> str:
         return f"{self.user.first_name} {self.user.last_name}"
 
@@ -48,6 +50,8 @@ class SkillDetail(models.Model):
             MinValueValidator(1)
         ]
     )
+    def __str__(self):
+        return f"{self.skill} - {self.name}"
     
 class Qualification(models.Model):
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
@@ -67,7 +71,7 @@ class QualificationDetail(models.Model):
         end = f"- {self.end.strftime('%m/%Y')}" if self.end else ''
         return f"{self.start.strftime('%m/%Y')} {end}"
     def __str__(self):
-        return self.name
+        return f"{self.qualification} - {self.name}"
         
 class Service(models.Model):
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
@@ -80,6 +84,9 @@ class Service(models.Model):
 class ServiceDetail(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     description = models.CharField("Service name",max_length=100)
+    
+    def __str__(self):
+        return self.description
     
 class Portfolio(models.Model):
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
