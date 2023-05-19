@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-=isp$x8mx_-5u1w3skd=^@npfekx&hj*+-lh7&6*xa!g_p=c1z
 DEBUG =  False
 
 
-ALLOWED_HOSTS = ['hackibosy.pythonanywhere.com']
+ALLOWED_HOSTS = ['hackibosy.pythonanywhere.com', "127.0.0.1"]
 
 
 # Application definition
