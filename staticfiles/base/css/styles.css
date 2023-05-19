@@ -815,6 +815,7 @@ button{
 
 .footer__container{
     row-gap: 3.5rem;
+    text-align: left;
 }
 
 .footer__bg{
@@ -931,7 +932,7 @@ body.dark-theme{
     background-color: var(--text-color-light);
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 568px) {
     .container{
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
@@ -964,9 +965,12 @@ body.dark-theme{
     .services__modal{
         padding: 0 .5rem;
     }
+    .footer__container{
+        text-align: center;
+    }
 }
 
-@media screen and (min-width: 568px) {
+@media screen and (min-width: 568px) and (max-width: 768px){
     .home__content{
         grid-template-columns: max-content 1fr 1fr;
     }
@@ -980,15 +984,20 @@ body.dark-theme{
     .about__container, .skills__container, .portfolio__content, .contact__container, .footer__container{
         grid-template-columns: repeat(2, 1fr);
     }
-
     .qualification__sections{
         display: grid;
         grid-template-columns: .6fr;
         justify-content: center;
     }
+    .footer__container{
+        text-align: center;
+    }
 }
 
 @media screen and (min-width: 768px) {
+    .about__container, .skills__container, .portfolio__content, .contact__container, .footer__container{
+        grid-template-columns: repeat(2, 1fr);
+    }
     .container{
         margin-left: auto;
         margin-right: auto;
@@ -1084,6 +1093,9 @@ body.dark-theme{
 }
 
 @media screen and (min-width: 1024px){
+    .about__container, .skills__container, .portfolio__content, .contact__container, .footer__container{
+        grid-template-columns: repeat(2, 1fr);
+    }
     .header, .main, .footer__container{
         padding: 0;
     }
