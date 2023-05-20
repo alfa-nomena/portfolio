@@ -151,10 +151,12 @@ const modalProjectViews = document.querySelectorAll('.projects-modal'),
     modalProjectBtns = document.querySelectorAll('.projects-button'),
     modalProjectCloses = document.querySelectorAll('.projects-modal-close')
 
+
+
 let modalProject = function(modalClick){
     modalProjectViews[modalClick].classList.add('active-modal')
 }
-
+console.log(modalProjectBtns)
 modalProjectBtns.forEach((modalProjectBtn, i) => {
     modalProjectBtn.addEventListener('click', () => {
         modalProject(i)
