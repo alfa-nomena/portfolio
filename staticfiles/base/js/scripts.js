@@ -146,3 +146,25 @@ skills__level.forEach(level =>{
     val = level.textContent
     console.log(val.slice(0, val.length-1))
 })
+
+const modalProjectViews = document.querySelectorAll('.projects-modal'),
+    modalProjectBtns = document.querySelectorAll('.projects-button'),
+    modalProjectCloses = document.querySelectorAll('.projects-modal-close')
+
+let modalProject = function(modalClick){
+    modalProjectViews[modalClick].classList.add('active-modal')
+}
+
+modalProjectBtns.forEach((modalProjectBtn, i) => {
+    modalProjectBtn.addEventListener('click', () => {
+        modalProject(i)
+    })
+})
+
+modalProjectCloses.forEach((modalClose) => {
+    modalClose.addEventListener('click', () => {
+        modalProjectViews.forEach((modalProjectView) => {
+            modalProjectView.classList.remove('active-modal')
+        })
+    })
+})

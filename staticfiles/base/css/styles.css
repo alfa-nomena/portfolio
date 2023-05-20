@@ -1152,12 +1152,14 @@ body.dark-theme{
     padding: 20px;
     visibility: hidden;
     opacity: 0;
+    text-align: justify;
 }
 .projects-button{
     justify-content: flex-end;
     align-items: flex-end;
 }
 .projects-description{
+    text-align: justify;
     height: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
