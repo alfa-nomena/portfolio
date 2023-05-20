@@ -638,7 +638,6 @@ img{
     row-gap: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
 }
 
@@ -1138,6 +1137,8 @@ body.dark-theme{
     margin-bottom: 1rem;
 }
 .projects-modal {
+    max-width: 900px;
+    max-height: 400px;
     font-size: .8rem;
     color: initial;
     cursor: pointer;
@@ -1165,20 +1166,22 @@ body.dark-theme{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-p.projects-link-modal {
+.projects-link-modal {
     display: flex;
     justify-content: flex-end;
 }
 
 
-.project-image-modal {
-    width: 50%;
+.projects-sources-modal, .project-image-modal {
+    width: 48%;
 }
-p.project-description-modal {
+.project-description-modal {
     overflow: auto;
     height: 200px;
 }
-[class^="uil-"], [class*=" uil-"] {
-    display: inline-block;
-    width: 100%;
+.links-project-modal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
 }

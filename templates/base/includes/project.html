@@ -21,21 +21,25 @@
                     <div class="services__modal">
                         <div class="projects-modal">
                             <i class="services__modal-close uil uil-times"></i>
-
-                            <div class='project-image-modal'>
-                                <a href="{{project.link}}" target='_blank'>
-                                    <img src="{{project.image.url}}" alt="{{project.title}}">
-                                </a>
+                            <div class="links-project-modal">
+                                <div class='project-image-modal'>
+                                    <a href="{{project.link}}" target='_blank'>
+                                        <img src="{{project.image.url}}" alt="{{project.title}}">
+                                    </a>
+                                </div>
+                                <div class="projects-sources-modal">
+                                    <div class="projects-link-modal"><a href="{{project.link}}" target='_blank'>View site <i class="button__icon uil uil-arrow-right"></i></a></div>
+                                    <div class="projects-link-modal"><a href="{{project.source}}" target='_blank'>Source code <i class="button__icon uil uil-arrow-right"></i></a></div>
+                                    <div class="projects-link-modal"><a href="{{project.detail}}" target='_blank'>Detail <i class="button__icon uil uil-arrow-right"></i></a></div>
+                                </div>
+                                
                             </div>
                             <div class="projects-details-modal">
                                 <h2 class="projects-title-modal">Title : {{project.title}}</h3>
                                 <h3 class="project-subtitle-modal">Description</h3>
-                                <p class="project-description-modal">
+                                <div class="project-description-modal">
                                     {{project.description}}
-                                    <p class="projects-link-modal"><a href="{{project.link}}" target='_blank'>View site <i class="button__icon uil uil-arrow-right"></i></a></p>
-                                    <p class="projects-link-modal"><a href="{{project.source}}" target='_blank'>Source code <i class="button__icon uil uil-arrow-right"></i></a></p>
-                                    <p class="projects-link-modal"><a href="{{project.detail}}" target='_blank'>Detail <i class="button__icon uil uil-arrow-right"></i></a></p>
-                                </p>
+                                </div>
                                 
                             </div>
                         </div>
