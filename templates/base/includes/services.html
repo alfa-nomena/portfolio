@@ -2,7 +2,7 @@
     <h2 class="section__title">Services</h2>
     <span class="section__subtitle">What I offer</span>
     <div class="services__container container grid">
-        {% for service in owner.services_all %}
+        {% for service in owner.service_set.all %}
             <div class="services__content">
                 <div>
                     <i class="services__icon uil uil-{{service.class_logo}}"></i>
