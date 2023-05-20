@@ -1138,20 +1138,23 @@ body.dark-theme{
     margin-bottom: 1rem;
 }
 .projects-modal {
+    top: 0;
+    right: 0;
+    font-size: inherit;
+    color: initial;
+    cursor: pointer;
     width: 90%;
     position: absolute;
     z-index: 100000;
     opacity: 1;
     background-color: #fff;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
     justify-content: stretch;
     box-shadow: 0 0 100px 10px black;
     border-radius: 10px;
     padding: 20px;
-    visibility: hidden;
-    opacity: 0;
     text-align: justify;
 }
 .projects-button{
