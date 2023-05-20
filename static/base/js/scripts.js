@@ -84,7 +84,7 @@ const modalProjectViews = document.querySelectorAll('.projects-modal'),
     modalProjectCloses = document.querySelectorAll('.projects-modal-close')
 
 let modalProject = function(modalClick){
-    modalViews[modalClick].classList.add('active-modal')
+    modalProjectViews[modalClick].classList.add('active-modal')
 }
 
 modalProjectBtns.forEach((modalProjectBtn, i) => {
