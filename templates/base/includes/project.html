@@ -5,10 +5,10 @@
     <div class="projects__container container">
         <div>
             
-            {% for projects in owner.projects_set.all %}
+            {% for project in owner.projects_set.all %}
                 <div class="projects__content grid swiper-slide">
-                    <a href="{{projects.link}}" target='_blank'>
-                        <img src="{{projects.image.url}}" alt="{{projects.title}}" class="projects__img">
+                    <a href="{{project.link}}" target='_blank'>
+                        <img src="{{project.image.url}}" alt="{{projects.title}}" class="projects__img">
                     </a>
 
                     <div class="projects__data">

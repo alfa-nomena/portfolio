@@ -81,7 +81,7 @@ class ServiceDetail(models.Model):
     def __str__(self):
         return f"{self.service} - {self.description}"
     
-class Projects(AbstractAbout):
+class Project(AbstractAbout):
     link = models.URLField()
     description = models.TextField()
     image = models.ImageField(upload_to='images/projects', null=True)
