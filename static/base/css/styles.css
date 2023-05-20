@@ -1137,11 +1137,10 @@ body.dark-theme{
     text-align: center;
     margin-bottom: 1rem;
 }
-
 .projects-modal {
     width: 90%;
     position: absolute;
-    z-index: 1999;
+    z-index: 100000;
     opacity: 1;
     background-color: #fff;
     display: flex;
@@ -1151,4 +1150,6 @@ body.dark-theme{
     box-shadow: 0 0 100px 10px black;
     border-radius: 10px;
     padding: 20px;
+    visibility: hidden;
+    opacity: 0;
 }
