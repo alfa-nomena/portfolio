@@ -33,11 +33,11 @@ class AbstractAbout(models.Model):
 
     def __str__(self):
         return self.title
-class TitleWithLogo(AbstractAbout):
+class AbstractWithLogo(AbstractAbout):
     class_logo = models.CharField(max_length=50)
     class Meta:
         abstract=True
-class Skill(TitleWithLogo):
+class Skill(AbstractWithLogo):
     pass
     
     
@@ -55,7 +55,7 @@ class SkillDetail(models.Model):
     def __str__(self):
         return f"{self.skill} - {self.name}"
     
-class Qualification(TitleWithLogo):
+class Qualification(AbstractWithLogo):
     pass
 
 class QualificationDetail(models.Model):
@@ -71,7 +71,7 @@ class QualificationDetail(models.Model):
     def __str__(self):
         return f"{self.qualification} - {self.name}"
         
-class Service(TitleWithLogo):
+class Service(AbstractWithLogo):
     pass
 
 class ServiceDetail(models.Model):
@@ -93,4 +93,5 @@ class Projects(AbstractAbout):
 
 class SocialMediaContact(AbstractAbout):
     link = models.URLField(blank=True, null=True)
-    user_name = models.CharField(max_length=100)
+    pseudo = models.CharField("name",max_length=100)
+    class_logo = models.CharField(max_length=50)

@@ -27,14 +27,18 @@
                     <span class="contact__subtitle">{{owner.location|default:""}}</span>
                 </div>
             </div>
-
-            <div class="contact__information">
-                <i class="contact__icon uil uil-linkedin"></i>
-                <div>
-                    <h3 class="contact__title">Linkedin</h3>
-                    <span class="contact__subtitle">{{owner.linkedin|default:""}}</span>
+            
+            {% for contact in owner.socialmediacontact_set.all %}
+                <div class="contact__information">
+                    <i class="contact__icon uil uil-{{contact.class_logo}}"></i>
+                    <div>
+                        <h3 class="contact__title">Linkedin</h3>
+                        <span class="contact__subtitle">{{owner.linkedin|default:""}}</span>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
+                
+            
 
             <div class="contact__information">
                 <i class="contact__icon uil uil-facebook-f"></i>
