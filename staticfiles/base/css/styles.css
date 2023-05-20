@@ -1166,8 +1166,8 @@ body.dark-theme{
     text-overflow: ellipsis;
 }
 p.projects-link-modal {
-    text-align: right;
-
+    display: flex;
+    justify-content: flex-end;
 }
 
 
@@ -1177,4 +1177,8 @@ p.projects-link-modal {
 p.project-description-modal {
     overflow: auto;
     height: 200px;
+}
+[class^="uil-"], [class*=" uil-"] {
+    display: inline-block;
+    width: 100%;
 }
