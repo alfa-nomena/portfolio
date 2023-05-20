@@ -1153,3 +1153,11 @@ body.dark-theme{
     visibility: hidden;
     opacity: 0;
 }
+.projects-button{
+    justify-content: flex-end;
+}
+.projects-description{
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
