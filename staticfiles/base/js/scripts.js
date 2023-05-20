@@ -162,7 +162,7 @@ modalProjectBtns.forEach((modalProjectBtn) => {
 
 modalProjectBtns.forEach((modalProjectBtn, i) => {
     modalProjectBtn.addEventListener('click', () => {
-        modalProject(i)
+        modalProjectViews[i].classList.add('active-modal')
     })
 })
 
