@@ -1138,9 +1138,7 @@ body.dark-theme{
     margin-bottom: 1rem;
 }
 .projects-modal {
-    top: 0;
-    right: 0;
-    font-size: inherit;
+    font-size: .8rem;
     color: initial;
     cursor: pointer;
     width: 90%;
@@ -1149,7 +1147,7 @@ body.dark-theme{
     opacity: 1;
     background-color: #fff;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
     justify-content: stretch;
     box-shadow: 0 0 100px 10px black;
@@ -1166,4 +1164,17 @@ body.dark-theme{
     height: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+p.projects-link-modal {
+    text-align: right;
+
+}
+
+
+.project-image-modal {
+    width: 50%;
+}
+p.project-description-modal {
+    overflow: auto;
+    height: 200px;
 }
