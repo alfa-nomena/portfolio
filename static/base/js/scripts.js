@@ -89,7 +89,7 @@ let modalProject = function(modalClick){
 
 modalProjectBtns.forEach((modalBtn, i) => {
     modalProjectBtn.addEventListener('click', () => {
-        modal(i)
+        modalProject(i)
     })
 })
 
