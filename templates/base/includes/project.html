@@ -6,7 +6,7 @@
         <div>
             
             {% for project in owner.project_set.all %}
-                <div class="projects__content grid swiper-slide">
+                <div class="projects__content grid">
                     <a href="{{project.link}}" target='_blank'>
                         <img src="{{project.image.url}}" alt="{{projects.title}}" class="projects__img">
                     </a>
