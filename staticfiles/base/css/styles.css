@@ -1155,9 +1155,10 @@ body.dark-theme{
 }
 .projects-button{
     justify-content: flex-end;
+    align-items: flex-end;
 }
 .projects-description{
-    width: 200px;
+    height: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
