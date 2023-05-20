@@ -19,8 +19,9 @@
                         View more <i class="button__icon uil uil-arrow-right"></i>
                     </span>
                     <div class="services__modal">
-                        <i class="services__modal-close uil uil-times"></i>
                         <div class="projects-modal">
+                            <i class="services__modal-close uil uil-times"></i>
+
                             <div class='project-image-modal'>
                                 <a href="{{project.link}}" target='_blank'>
                                     <img src="{{project.image.url}}" alt="{{project.title}}">
@@ -35,6 +36,7 @@
                                 <p class="projects-detail-modal"><a href="{{project.detail}}" target='_blank'>Detail <i class="button__icon uil uil-arrow-right"></i></a></p>
                             </div>
                         </div>
+
                     </div>
                 </div>
             {% endfor %}
