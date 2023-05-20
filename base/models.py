@@ -7,38 +7,40 @@ from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 class Owner(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    pseudo = models.CharField(max_length=50, null=True, blank=True)
     short_description = models.TextField(null=True)
     title = models.CharField(max_length=100)
     description = models.TextField(null=True)
     profile_picture = models.ImageField(upload_to="images/about", null=True)
     cover_picture = models.ImageField(upload_to="images/about", null=True)
     name = lambda self: f"{self.user.first_name} {self.user.last_name}"
-    cv = models.FileField("Curriculum Vitae", upload_to="images/owner", blank=True, null=True)
+    cv = models.FileField("Curriculum Vitae", upload_to="document/owner", blank=True, null=True)
     phone_number = PhoneNumberField(blank=True, null=True)
     location = models.CharField(max_length=100)
-    linkedin = models.URLField(blank=True, null=True)
-    facebook = models.URLField(blank=True, null=True)
-    facebook_name = models.CharField(max_length=100, null=True, blank=True)
-    github = models.URLField(blank=True, null=True)
     class Meta:
         verbose_name = "About me"
         verbose_name_plural = "About me"
     def current_name(self):
-        return self.pseudo or (
-            self.user.first_name.split()[-1] if self.user.first_name else ''
-        )
+        return self.user.first_name.split()[-1] or ''
     def __str__(self) -> str:
         return f"{self.user.first_name} {self.user.last_name}"
 
-class Skill(models.Model):
+class AbstractAbout(models.Model):
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    subtitle = models.CharField(max_length=100)
-    class_logo = models.CharField(max_length=50)
     
+    class Meta:
+        abstract=True
+
     def __str__(self):
         return self.title
+class TitleWithLogo(AbstractAbout):
+    class_logo = models.CharField(max_length=50)
+    class Meta:
+        abstract=True
+class Skill(TitleWithLogo):
+    pass
+    
+    
 
 class SkillDetail(models.Model):
     skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
@@ -53,12 +55,8 @@ class SkillDetail(models.Model):
     def __str__(self):
         return f"{self.skill} - {self.name}"
     
-class Qualification(models.Model):
-    owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-    class_logo = models.CharField(max_length=50)
-    def __str__(self):
-        return self.name
+class Qualification(TitleWithLogo):
+    pass
 
 class QualificationDetail(models.Model):
     qualification = models.ForeignKey(Qualification, on_delete=models.CASCADE)
@@ -73,13 +71,8 @@ class QualificationDetail(models.Model):
     def __str__(self):
         return f"{self.qualification} - {self.name}"
         
-class Service(models.Model):
-    owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
-    name = models.CharField("Service name",max_length=100)
-    class_logo = models.CharField(max_length=50)
-    
-    def __str__(self):
-        return self.name
+class Service(TitleWithLogo):
+    pass
 
 class ServiceDetail(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
@@ -88,12 +81,16 @@ class ServiceDetail(models.Model):
     def __str__(self):
         return f"{self.service} - {self.description}"
     
-class Portfolio(models.Model):
-    owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
-    title = models.CharField(max_length=50)
+class Projects(AbstractAbout):
     link = models.URLField()
     description = models.TextField()
-    image = models.ImageField(upload_to='images/portfolio', null=True)
+    image = models.ImageField(upload_to='images/projects', null=True)
+    source = models.URLField()
+    detail = models.URLField()
 
     def __str__(self):
         return self.title
+
+class SocialMediaContact(AbstractAbout):
+    link = models.URLField(blank=True, null=True)
+    user_name = models.CharField(max_length=100)

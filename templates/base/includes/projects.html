@@ -1,0 +1,22 @@
+<section class="projects section" id="projects">
+    <h2 class="section__title">projects</h2>
+    <span class="section__subtitle">Most recent work</span>
+
+    <div class="projects__container container">
+        <div>
+            
+            {% for projects in owner.projects_set.all %}
+                <div class="projects__content grid swiper-slide">
+                    <a href="{{projects.link}}" target='_blank'>
+                        <img src="{{projects.image.url}}" alt="{{projects.title}}" class="projects__img">
+                    </a>
+
+                    <div class="projects__data">
+                        <h3 class="projects__title">{{projects.title}}</h3>
+                        <p class="projects__description">{{projects.description}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

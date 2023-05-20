@@ -673,47 +673,47 @@ img{
     opacity: 1;
 }
 
-.portfolio__container{
+.projects__container{
     overflow: initial;
 }
 
-.portfolio__content{
+.projects__content{
     padding: 0 1.5rem;
 }
 
-.portfolio__img{
+.projects__img{
     width: 265px;
     border-radius: 1rem;
     padding: .5rem;
     justify-content: center;
 }
 
-.portfolio__title{
+.projects__title{
     font-size: var(--h3-font-size);
     margin-bottom: var(--mb-0-5);
 }
 
-.portfolio__description{
+.projects__description{
     margin-bottom: var(--mb-0-75);
 }
 
-.portfolio__button *{
+.projects__button *{
     z-index: 100;
 }
-.portfolio__button:hover .button__icon{
+.projects__button:hover .button__icon{
     transform: translateX(.25rem);
 }
 
 .swiper-button-prev::after,.swiper-button-next::after{
     content: ''
 }
-.swiper-portfolio-icon{
+.swiper-projects-icon{
     font-size: 4rem;
     color: var(--first-color);
     opacity: 0.5;
     transition: .3s;
 }
-.swiper-portfolio-icon:hover{
+.swiper-projects-icon:hover{
     opacity: 1;
 }
 
@@ -981,7 +981,7 @@ body.dark-theme{
         order: 1;
         justify-self: center;
     }
-    .about__container, .skills__container, .portfolio__content, .contact__container, .footer__container{
+    .about__container, .skills__container, .projects__content, .contact__container, .footer__container{
         grid-template-columns: repeat(2, 1fr);
     }
     .qualification__sections{
@@ -995,7 +995,7 @@ body.dark-theme{
 }
 
 @media screen and (min-width: 768px) {
-    .about__container, .skills__container, .portfolio__content, .contact__container, .footer__container{
+    .about__container, .skills__container, .projects__content, .contact__container, .footer__container{
         grid-template-columns: repeat(2, 1fr);
     }
     .container{
@@ -1074,7 +1074,7 @@ body.dark-theme{
     .services__modal-content{
         width: 600px;
     }
-    .portfolio__img{
+    .projects__img{
         width: 350px;
     }
     .footer__container{
@@ -1093,7 +1093,7 @@ body.dark-theme{
 }
 
 @media screen and (min-width: 1024px){
-    .about__container, .skills__container, .portfolio__content, .contact__container, .footer__container{
+    .about__container, .skills__container, .projects__content, .contact__container, .footer__container{
         grid-template-columns: repeat(2, 1fr);
     }
     .header, .main, .footer__container{
@@ -1105,10 +1105,10 @@ body.dark-theme{
     .home__social{
         transform: translate(-6rem);
     }
-    .portfolio__content{
+    .projects__content{
         column-gap: 5rem;
     }
-    .swiper-portfolio-icon{
+    .swiper-projects-icon{
         font-size: 4rem;
     }
     .swiper-button-prev{
