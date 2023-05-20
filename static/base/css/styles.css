@@ -594,12 +594,12 @@ img{
     font-weight: var(--font-medium);
 }
 
-.services__button{
+.services__button, .projects-button{
     cursor: pointer;
     font-size: var(--small-font-size);
 }
 
-.services__button:hover .button__icon{
+.services__button:hover .button__icon, .projects-button:hover .button__icon{
     transform: translateX(.25rem);
 }
 
@@ -682,6 +682,10 @@ img{
 
 .projects__description{
     margin-bottom: var(--mb-0-75);
+    overflow: hidden;
+    height: 200px;
+    text-align: justify;
+    text-overflow: ellipsis;
 }
 
 .projects__button *{
@@ -1132,4 +1136,19 @@ body.dark-theme{
     font-size: 1.4rem;
     text-align: center;
     margin-bottom: 1rem;
+}
+
+.project-modal {
+    width: 90%;
+    position: absolute;
+    z-index: 1999;
+    opacity: 1;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: stretch;
+    box-shadow: 0 0 100px 10px black;
+    border-radius: 10px;
+    padding: 20px;
 }

@@ -78,6 +78,29 @@ modalCloses.forEach((modalClose) => {
     })
 })
 
+
+const modalProjectViews = document.querySelectorAll('.projects-modal'),
+    modalProjectBtns = document.querySelectorAll('.projects-button'),
+    modalProjectCloses = document.querySelectorAll('.projects-modal-close')
+
+let modalProject = function(modalClick){
+    modalViews[modalClick].classList.add('active-modal')
+}
+
+modalProjectBtns.forEach((modalBtn, i) => {
+    modalProjectBtn.addEventListener('click', () => {
+        modal(i)
+    })
+})
+
+modalProjectCloses.forEach((modalClose) => {
+    modalClose.addEventListener('click', () => {
+        modalProjectViews.forEach((modalProjectView) => {
+            modalProjectView.classList.remove('active-modal')
+        })
+    })
+})
+
 let swiper = new Swiper(".portfolio__container", {
     cssMode: true,
     loop: true,

@@ -14,20 +14,24 @@
                     <div class="projects__data">
                         <h3 class="projects__title">{{project.title}}</h3>
                         <p class="projects__description">{{project.description}}</p>
+                        <span class="button button--flex button--small button--link projects-button">
+                            View more <i class="button__icon uil uil-arrow-right"></i>
+                        </span>
                     </div>
-                    <div class="project-modal">
+                    <div class="projects-modal">
+                        <i class="projects-modal-close uil uil-times"></i>
                         <div class='project-image-modal'>
                             <a href="{{project.link}}" target='_blank'>
-                                <img src="{{project.image.url}}" alt="{{projects.title}}">
+                                <img src="{{project.image.url}}" alt="{{project.title}}">
                             </a>
                         </div>
                         <div class="projects-details-modal">
                             <h2 class="projects-title-modal">Title : {{project.title}}</h3>
                             <h3 class="project-subtitle-modal">Description</h3>
                             <p class="project-description-modal">{{project.description}}</p>
-                            <p class="projects-link-modal"><a href="{{project.link}}" target='_blank'>View site</a></p>
-                            <p class="projects-source-modal"><a href="{{project.source}}" target='_blank'>Source code</a></p>
-                            <p class="projects-detail-modal"><a href="{{project.detail}}" target='_blank'>Detail</a></p>
+                            <p class="projects-link-modal"><a href="{{project.link}}" target='_blank'>View site <i class="button__icon uil uil-arrow-right"></i></a></p>
+                            <p class="projects-source-modal"><a href="{{project.source}}" target='_blank'>Source code <i class="button__icon uil uil-arrow-right"></i></a></p>
+                            <p class="projects-detail-modal"><a href="{{project.detail}}" target='_blank'>Detail <i class="button__icon uil uil-arrow-right"></i></a></p>
                         </div>
                     </div>
                 </div>
