@@ -32,21 +32,17 @@
                 <div class="contact__information">
                     <i class="contact__icon uil uil-{{contact.class_logo}}"></i>
                     <div>
-                        <h3 class="contact__title">Linkedin</h3>
-                        <span class="contact__subtitle">{{owner.linkedin|default:""}}</span>
+                        <h3 class="contact__title">{{contact.title}}</h3>
+                        {% if contact.link %}
+                            <a href="{{contact.link}}" target="_blank">
+                        {% endif %}
+                        <span class="contact__subtitle">{{contact.pseudo|default:""}}</span>
+                        {% if contact.link %}
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}
-                
-            
-
-            <div class="contact__information">
-                <i class="contact__icon uil uil-facebook-f"></i>
-                <div>
-                    <h3 class="contact__title">Facebook</h3>
-                    <span class="contact__subtitle">{{owner.facebook_name|default:""}}</span>
-                </div>
-            </div>
         </div>
         <form action="#" class="contact__form grid">
             <h3 class="descr-title">Send me an email</h3>
@@ -54,23 +50,23 @@
                 <div class="contact__content">
                     <label class="contact__label">
                         Name
-                    </label>
                     <input type="text" class="contact__input">
+                </label>
 
                 </div>
                 <div class="contact__content">
                     <label class="contact__label">
                         Email
-                    </label>
                     <input type="email" class="contact__input">
+                </label>
 
                 </div>
             </div>
             <div class="contact__content">
                 <label class="contact__label">
                     Message
-                </label>
-                <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                <textarea name="message" cols="0" rows="7" class="contact__input"></textarea>
+            </label>
 
             </div>
             <div>
