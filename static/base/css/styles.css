@@ -1138,7 +1138,7 @@ body.dark-theme{
     margin-bottom: 1rem;
 }
 
-.project-modal {
+.projects-modal {
     width: 90%;
     position: absolute;
     z-index: 1999;
