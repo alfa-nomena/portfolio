@@ -1,7 +1,4 @@
 db.sqlite3
-staticfiles/admin
-static/
 portfolio_env
 **/__pycache__/
 **/migrations/
-media/

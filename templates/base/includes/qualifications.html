@@ -14,13 +14,14 @@
                     <i class="uil uil-angle-down skills__arrow"></i>
                 </div>
                 <div class="skills__list grid">
-                    {% for qualification_detail in qualification.qualificationdetail_set.all %}
+                    {% for qualification_detail in qualification.qualificationdetail_set.all reversed %}
                         <div class="skills__data">
-                            <h3 class="qualification__title">{{qualification_detail.title|title}}</h3>
-                                <span class="qualification__subtitle">{{qualification_detail.detail|capfirst}}</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>{{qualification_detail.duration}}
-                                </div>
+                            <h2 class="qualification__title">{{qualification_detail.title|title}}</h2>
+                            <h3 class="qualification__title">{{qualification_detail.name|title}}</h3>
+                            <span class="qualification__subtitle">{{qualification_detail.detail|capfirst}}</span>
+                            <div class="qualification__calendar">
+                                <i class="uil uil-calendar-alt"></i>{{qualification_detail.duration}}
+                            </div>
                         </div>
                     {% endfor %}
                 </div>

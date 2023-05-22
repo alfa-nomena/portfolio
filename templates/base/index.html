@@ -26,15 +26,13 @@
         {% include 'base/includes/header.html' %}
     </header>
     <main class="main">
-        {% block alert %}
-            {% if messages %}
-            <div class='alert alert-info'>
+        {% if messages %}
+            <div id="messages">
                 {% for message in messages %}
-                <p class="alert alert-{{ message.tags }}"> {{ message }} </p>
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
                 {% endfor %}
-                </div>
-            {% endif %} 
-        {% endblock alert %}
+            </div>
+        {% endif %}       
 
         {% include 'base/includes/home.html' %}
 
