@@ -44,30 +44,37 @@
                 </div>
             {% endfor %}
         </div>
-        <form action="#" class="contact__form grid">
-            <h3 class="descr-title">Send me an email</h3>
+        <form action="{% url 'base:message' %}" class="contact__form grid" method="POST">
+            {% csrf_token %}
+            <h3 class="descr-title">Leave me a message directely</h3>
             <div class="contact__inputs grid">
                 <div class="contact__content">
                     <label class="contact__label">
                         Name
-                    <input type="text" class="contact__input">
-                </label>
+                        {{form.name}}
+                    </label>
+
+                </div>
+                <div class="contact__content">
+                    <label class="contact__label">
+                        Object
+                        {{form.title}}
+                    </label>
 
                 </div>
                 <div class="contact__content">
                     <label class="contact__label">
                         Email
-                    <input type="email" class="contact__input">
-                </label>
+                        {{form.email}}
+                    </label>
 
                 </div>
             </div>
             <div class="contact__content">
                 <label class="contact__label">
                     Message
-                <textarea name="message" cols="0" rows="7" class="contact__input"></textarea>
-            </label>
-
+                    {{form.message}}
+                </label>
             </div>
             <div>
                 <button type="submit" class="button button--flex">

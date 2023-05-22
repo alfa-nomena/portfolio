@@ -95,3 +95,11 @@ class SocialMediaContact(AbstractAbout):
     link = models.URLField(blank=True, null=True)
     pseudo = models.CharField("name",max_length=100)
     class_logo = models.CharField(max_length=50)
+    
+class Message(models.Model):
+    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField(null=False, blank=False)
+    def __str__(self):
+        return f"{self.title} - {self.name}"
